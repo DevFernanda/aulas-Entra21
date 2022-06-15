@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Informe e-mail</label>
+    <input type="email" autocomplete="email" placeholder="Informe email">
+    <button onclick="login()">Logar</button>
+
+    <script>
+        function login(){
+            var user = document.getElementsByTagName("input")[0].value
+            localStorage.setItem("usuarioLogado", user)
+            parent.location.href = 'index.html'
+        }
+
+    </script>
+</body>
+</html>

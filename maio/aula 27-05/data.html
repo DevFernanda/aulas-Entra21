@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="dados">
+
+    </div>
+    <div id="datanascimento">
+    </div>
+    <div id="milisegundos"></div>
+    <script>
+        
+        function ola() {
+            var d = new Date();
+            document.getElementById('dados').innerHTML = d.toLocaleString();
+        } setInterval (ola, 1000);
+        
+        var datanasc = new Date (1976, 05, 20, 15, 30, 00)
+            document.getElementById("datanascimento").innerHTML = datanasc
+            document.getElementById('milisegundos').innerHTML = Date.UTC(1976,05,20);
+    </script>
+</body>
+</html>

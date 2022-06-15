@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>Informe uma fruta</label>
+    <input type="text" placeholder="informe uma fruta">
+    <button onclick="add()">Inserir</button>
+
+<script>
+    var cesta = []
+    if (localStorage.getItem("frutas") !=null) {
+        cesta = localStorage.getItem("frutas").split(",")
+    }
+    function add(){
+        cesta.push(document.getElementsByTagName("input")[0].value)
+        localStorage.setItem("frutas", cesta)
+    }
+
+</script>
+
+
+</body>
+</html>

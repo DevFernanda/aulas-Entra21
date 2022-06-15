@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carne</title>
+</head>
+<body>
+    <h1>Churrasco!</h1>
+    <h4> Informe a quantidade de pessoas:</h4>
+    <input type="number"  id="qtdPessoas" placeholder="Pessoas:"> <br>
+    <h4> Informe a quantidade de gramas por pessoa:</h4>
+    <input type="number" id="gramaPessoa" placeholder="Gramas:"> <br>
+    <h4> Informe a o tipo de carne:</h4>
+    <input type="text" id="tipoDeCarne" placeholder="Tipo de carne:"> <br>
+    <h4> Informe o preço por Kg da carne:</h4>
+    <input type="number" id="preco" placeholder="Informe o preço do Kg da carne"> <br> <br>
+    <button onclick="calcular()">Calcular</button> <br>
+    <hr>
+    <p id="resposta"></p>
+    
+
+    <script>
+        function calcular(){
+            var qtdPessoas=parseFloat(document.getElementById("qtdPessoas").value)
+            var gramaPessoa=parseFloat(document.getElementById("gramaPessoa").value)
+            var tipoDeCarne=document.getElementById("tipoDeCarne").value
+            var preco=parseFloat(document.getElementById("preco").value)
+            var totalgramas=(qtdPessoas*gramaPessoa) / 1000
+            var totalpreco=(totalgramas*preco)
+
+            if (document.getElementById("qtdPessoas").value == ''){
+                alert("Informe a quantidade de pessoas!")
+                document.getElementById("qtdPessoas").focus()
+            }
+            /* alterar as variáveis para n validar o vazio como número  */
+            if (document.getElementById("gramaPessoa").value == ''){
+                alert("Informe as gramas!")
+                document.getElementById("gramaPessoa").focus()
+            }
+
+            if(qtdPessoas > 10){
+                totalpreco = totalpreco + (totalpreco*0.10)
+            }
+            
+
+            document.getElementById("resposta").innerHTML = `Comprar ${totalgramas} Kg, com R$ ${totalpreco}, para ${qtdPessoas} pessoas, e o total por pessoa é de R$ ${(totalpreco/qtdPessoas).toFixed(2)}.`
+        }
+    </script>
+</body>
+</html>

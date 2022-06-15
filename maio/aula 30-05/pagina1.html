@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página1</title>
+</head>
+<body>
+    <h1>Digite 3 frutas</h1>
+
+    <input type="text" id="fruta" placeholder="Digite uma fruta">
+    <button onclick="add()">Adicionar</button>
+
+    <script>
+        var frutas = []
+        
+        function add() {
+            frutas.push(document.getElementById("fruta").value)
+            reset()
+            console.log(frutas)
+            localStorage.setItem("listafrutas", frutas)
+            
+        }
+        function reset(){
+            document.getElementById("fruta").value = ''
+        }
+
+    </script>
+</body>
+</html>

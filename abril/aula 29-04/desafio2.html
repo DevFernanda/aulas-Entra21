@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatorial</title>
+</head>
+<body>
+    <input type="text" id="numero" placeholder="Informe um número:">
+    <button onclick="calcule()">Calcule!</button>
+    <p id="resposta"></p>
+
+    <script>
+        function calcule(){
+            var numero = document.getElementById("numero").value
+            var resposta = document.getElementById("resposta")
+            var fat = 1
+
+            for (var count=1; count<=numero; count++){
+                fat *= count;
+
+                resposta.innerHTML = fat
+
+            }
+        }
+        /* 
+            <input type="text" id="numero" placeholder="Informe um número:">
+            <button onclick="calcule()">Calcule!</button>
+            <p id="resposta"></p>
+
+            <script>
+            function calcular (){
+                var numero = 0
+                numero = documento.getElementById("numero").value
+
+                var fatorial = numero
+                while(numero > 1){
+                    numero--
+                    fatorial = fatorial*numero
+                }
+            }            
+            </scrip>         
+        */ 
+    </script>
+</body>
+</html>
+

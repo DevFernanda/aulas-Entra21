@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxa</title>
+</head>
+<body>
+    <input type="number" id="valor" placeholder="Informe o valor depositado:">
+    <input type="number" id="taxa"placeholder="Informe a taxa de juros da aplicação:">
+    <input type="number" id="meses" placeholder="Informe a quantos meses a aplicação foi feita: ">
+    <button onclick="calcule()">Calcule!</button>
+    <p id = "resposta"></p>
+    
+    <script>
+
+        function calcule(){
+
+        var valor = parseFloat(document.getElementById("valor").value)
+        var taxa = parseFloat (document.getElementById("taxa").value)
+        var meses = parseFloat (document.getElementById("meses").value)
+        taxa = taxa / 100
+        var acrescimo = valor * taxa
+
+        if (meses >= 3){
+            resultado = valor + acrescimo
+        }
+
+        document.getElementById("resposta").innerHTML = `Fernanda, o valor depositado foi de ${valor}, e a taxa aplicada foi de ${taxa}%, o total é de R$ ${resultado}.`
+
+        }
+        
+    </script>
+</body>
+</html>

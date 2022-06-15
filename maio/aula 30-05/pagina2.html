@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página2</title>
+</head>
+<body>
+    <h1>Lista</h1>
+    <button onclick="exibir()">Gerar</button>
+    <div id="result">
+
+    </div>
+
+    <script>
+        function exibir(){
+            var resultado = localStorage.getItem("listafrutas").split(",")
+            console.log(resultado);
+            document.getElementById("result").innerHTML = exibirResult(resultado)
+        }
+
+        function exibirResult(resu){
+            var lista = "<ol>"
+            for (let i = 0; i < resu.length; i++) {
+                lista += `
+                <li>${resu[i]}</li>`
+                
+            }  
+            lista += '</ol>'
+             return lista 
+        }
+     //   var l2 = [0,1,2,3,4,5,6]
+    //    document.getElementById("result").innerHTML = exibirResult(l2)
+    </script>
+</body>
+</html>

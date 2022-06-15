@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        iframe {
+            width: 100vw;
+        }
+    </style>
+</head>
+<body>
+    <a href="cadastro.html" id="cad" target="centro">Cadastro</a>
+    <a href="consulta.html" id="cons" target="centro">Consulta</a>
+    <button id="bt" onclick="login()">Login</button>
+    <label id="userConectado"></label>
+    <iframe src="login.html" frameborder="0" name="centro"></iframe>
+
+    <script>
+        if (localStorage.getItem("usuarioLogado") != null) {
+            document.getElementById("userConectado").innerHTML = localStorage.getItem("usuarioLogado")
+
+            document.getElementById("bt").innerHTML = "Logout"
+            document.getElementById("bt").addEventListener("click", logout)
+        } 
+        else {
+            document.getElementById("bt").addEventListener("click", login)
+            document.getElementById("cad").style = "display: none"
+            document.getElementById("cons").style = "display: none"
+            // showItensLogado('block')
+        }
+
+        function login(){
+            document.getElementsByTagName("iframe")[0].src = 'login.html'
+            window.location.href = "login.html"
+        }
+        
+        function logout(){
+            localStorage.removeItem("usuarioLogado")
+            window.location.reload()
+        }
+        //function showItensLogado(mostrar) {
+            //document.getElementById("cons").style = `display: ${mostrar}`
+       // }
+    </script>
+</body>
+</html>

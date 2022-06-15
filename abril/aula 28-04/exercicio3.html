@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas</title>
+</head>
+<body>
+    <input type="text" id="nome" placeholder="Informe o nome do aluno:">
+    <input type="number" id="nota1" placeholder="Informe a nota da 1ª prova:">
+    <input type="number" id="nota2" placeholder="Informe a nota da 2ª prova:">
+    <input type="number" id="nota3" placeholder="Informe a nota da 3ª prova:">
+    <button onclick="calcular()">Calcule a média</button>
+    <p id = "resultado"></p>
+    <script>
+        
+        function calcular(){
+        var nome =  document.getElementById("nome").value
+            if (nome == ''){
+                alert("Digite o nome do aluno")
+                document.getElementById("nome").focus()
+                return
+            }
+
+        var nota1 = document.getElementById("nota1").value
+            if(nota1 == ''){
+                alert("Digite a nota 1!")
+                document.getElementById("nota1").focus()
+                return
+            } else {
+                parseFloat (document.getElementById("nota1").value)
+                if (nota1 > 10){
+                    alert("A nota deve ser entre 0 a 10!")
+                    document.getElementById("nota1").focus()
+                    return
+                }
+                if (nota1 < 0){
+                    alert("A nota deve ser entre 0 a 10!")
+                    document.getElementById("nota1").focus()
+                    return 
+                }
+             }   
+       
+        var nota2 = document.getElementById("nota2").value
+            if(nota2 == ''){
+                alert("Digite a nota 2!")
+                document.getElementById("nota2").focus()
+                return
+            } else {
+                parseFloat (document.getElementById("nota2").value)
+                if (nota2 > 10){
+                    alert("A nota deve ser entre 0 a 10!")
+                    document.getElementById("nota2").focus()
+                    return
+                }
+                if (nota2 < 0){
+                    alert("A nota deve ser entre 0 a 10!")
+                    document.getElementById("nota2").focus()
+                    return 
+                }
+            }       
+        var nota3 = document.getElementById("nota3").value    
+            
+            if(nota3 == ''){
+                alert("Digite a nota 3!")
+                document.getElementById("nota3").focus()
+                return
+            } else {
+                parseFloat (document.getElementById("nota3").value)
+                if (nota3 > 10){
+                    alert("A nota deve ser entre 0 a 10!")
+                    document.getElementById("nota3").focus()
+                    return
+            }
+            if (nota3 < 0){
+                    alert("A nota deve ser entre 0 a 10!")
+                    document.getElementById("nota3").focus()
+                    return 
+            }
+            }
+            var media = (nota1 + nota2 + nota3) / 3
+            
+
+            if (media >= 7){
+                document.getElementById("resultado").innerHTML = `${nome}, sua média é ${media}, você foi aprovado!`
+            } else {
+                document.getElementById("resultado").innerHTML = `${nome}, sua média é ${media}, você foi reprovado!`
+            }
+        }
+    </script>
+</body>
+</html>

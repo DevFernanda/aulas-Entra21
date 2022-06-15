@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="window.location.href = 'stringparaobjeto.html'">Navegar</button>
+    <script>
+        var carro = {
+            marca: "ford",
+            modelo: "Ka",
+            ano: 2020,
+            cor: "vermelho"
+        }
+        console.log(carro)
+        console.log(carro.marca);
+        
+        var stringCarro = JSON.stringify(carro)
+        console.log(stringCarro);
+        console.log(stringCarro.marca);
+        localStorage.setItem("carro", stringCarro)
+
+        var venda = {
+            data: "30/05/2022",
+            cliente: {
+                id: 1, 
+                nome: "jose",
+                endereco: "Pomerode"
+            }, 
+            itens:[
+                {
+                    id: 10,
+                    descricao: 'Milho',
+                    preco: 10,
+                    quantidade: 20                
+                },
+                {
+                    id: 11,
+                    descricao: 'Banha',
+                    preco: 15,
+                    quantidade: 10                
+                }
+            ]
+        }
+        console.log(venda);
+    </script>
+</body>
+</html>

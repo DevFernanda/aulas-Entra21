@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira</title>
+</head>
+<body>
+    <h4>Informe o valor</h4>
+    <input type="text" id="valor" placeholder="Valor"> <br>
+    <h4>Informe a taxa</h4>
+    <input type="text" id="taxa" placeholder="Taxa"> <br>
+    <h4>Informe a quantidade de parcelas</h4>
+    <input type="text" id="parcelas"> <br> <br>
+    <button onclick="calcular()">Calcular</button>
+    <p id="juros"></p>
+    <p id="valorParcela"></p>
+    <p id="valorTotal"></p>
+
+    <script>
+        function calcular(){
+            var valor = 0
+            if (document.getElementById("valor").value == ''){
+                alert ("Informe o valor")
+                document.getElementById("valor").focus()
+                return
+            } else {
+                valor = parseFloat (document.getElementById("valor").value)
+            }
+            
+            var taxa = 0
+            if (document.getElementById("taxa").value == ''){
+                alert ("Informe a taxa")
+                document.getElementById("taxa").focus()
+                return
+            } else {
+                taxa = parseFloat (document.getElementById("taxa").value)/100
+            }
+
+            var qtdParcelas = 0
+            if (document.getElementById("parcelas").value == ''){
+                alert ("Informe a quantidade de parcelas")
+                document.getElementById("parcelas").focus()
+                return
+            } else {
+                qtdParcelas = parseFloat (document.getElementById("parcelas").value)
+            }
+
+            var juros = 0 
+            var x = qtdParcelas
+            while(x >0){
+            juros += valor * (taxa)
+            x--
+            }
+
+            var valorParcela = (valor + juros)/qtdParcelas
+            
+            
+            document.getElementById("juros").innerHTML = `O valor total de juros é de R$ ${juros}.`          
+            document.getElementById("valorParcela").innerHTML = `O valor total de cada parcela é de R$ ${valorParcela}.`   
+            document.getElementById("valorTotal").innerHTML = `O valor total do empréstimo é de R$ ${(valorParcela*qtdParcelas)}.`
+        }
+    </script>
+</body>
+</html>

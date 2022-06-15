@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input onclick="verificar()" type="checkbox" id="livros">Livros</input>
+
+    <script> 
+    function verificar(){
+        var checkado = document.getElementById("livros")
+        if (checkado.checked){
+            alert("Livro selecionado")
+        } else {
+            alert ("Livro não selecionado")
+        }
+    }
+    </script>
+
+</body>
+</html>

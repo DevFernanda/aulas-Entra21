@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            text-align: center;
+            align-items: center;
+            width: 500px;
+            border: solid 1px;
+        }
+        #um {
+            display: block;
+            padding: 5px;
+            align-items: center;
+        }
+        #dois {
+            display: block;
+            padding: 5px;
+            
+        }
+        #tres {
+            display: block;
+            padding: 5px;
+        }
+        #quatro {
+            display: block;
+            padding: 5px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="um">  
+            <label>Descrição</label> 
+            <input type="text" id="descricao" placeholder="Informe a descrição do produto"> 
+        </div>
+        <div id="dois">
+            <label>Preco</label>
+            <input type="text" id="preco" placeholder="Informe o preco do produto"> 
+        </div>
+        <div id="tres">
+            <label>Estoque</label>
+            <input type="text" id="estoque" placeholder="Informe o estoque do produto">
+        </div>
+        <div id="quatro">
+            <button onclick="comoMostrar()">Salvar</button>
+            <button onclick="limpar()">Limpar</button>
+        </div>
+        <div>    
+            <input onclick="shownow()" type="checkbox" id="showparagrafo" > Mostrar em parágrafo?
+        </div>
+        <div class="tabela">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Descrição</th>
+                        <th>Preço</th>
+                        <th>Estoque</th>
+                    </tr>
+                </thead>
+                <tbody id="dados">
+
+                </tbody>
+            </table>
+        </div>
+        <div id="paragrafo">
+
+        </div>
+    </div>
+
+    <script>
+        var produtos = []
+
+        function comoMostrar(){
+            if (document.getElementById("showparagrafo").checked){
+                add(mostrarEmParagrafo)
+                document.getElementById("paragrafo").style = "display: block"
+                document.getElementsByTagName("table")[0].style = "display: none"
+            }
+            else{
+                add(mostrarEmTabela)
+                document.getElementById("paragrafo").style = "display: none"
+                document.getElementsByTagName("table")[0].style = "display: block"
+            }
+            
+        }
+
+        function shownow(){
+            if (document.getElementById("showparagrafo").checked) {
+                document.getElementById("paragrafo").style = "display: block"
+                document.getElementsByTagName("table")[0].style = "display: none"
+                mostrarEmParagrafo()
+                
+            } ///else {
+                //document.getElementById("paragrafo").style = "display: none"
+                //document.getElementsByTagName("table")[0].style = "display: block"
+               // mostrarEmTabela()
+           // }
+        }
+
+        function add(callback){
+            var obj = {
+                descricao: document.getElementById("descricao").value,
+                preco: document.getElementById("preco").value,
+                estoque: document.getElementById("estoque").value
+            }
+
+            if (document.getElementById("descricao").value == '') {
+                alert ("Informe a descrição")
+                document.getElementById("descricao").focus()
+                return
+            } else {
+                document.getElementById("descricao").value
+            }
+
+            if (document.getElementById("preco").value == '') {
+                alert ("Informe o preço")
+                document.getElementById("preco").focus()
+                return
+            } else {
+                document.getElementById("preco").value
+            }
+
+            if (document.getElementById("estoque").value == '') {
+                alert ("Informe o estoque")
+                document.getElementById("estoque").focus()
+                return
+            } else {
+                document.getElementById("estoque").value
+            }
+            limpar ()
+
+            produtos.push(obj)
+            callback()
+            
+        }
+        
+        function mostrarEmTabela() {
+            var linhas = ""
+            for (let i = 0; i < produtos.length; i++) {
+                linhas += 
+                `<tr><td>${produtos[i].descricao}</td>    
+                <td>${produtos[i].preco}</td>
+                <td>${produtos[i].estoque}</td>
+                </tr>`
+            }
+            console.log(linhas)
+            document.getElementById("dados").innerHTML = linhas
+        
+        }
+
+        function mostrarEmParagrafo() {
+            var paragrafo = ""
+            for (let i = 0; i < produtos.length; i++) {
+                paragrafo += `
+                <p>${produtos[i].descricao}</p>    
+                <p>${produtos[i].preco}</p>
+                <p>${produtos[i].estoque}</p>`
+            }
+            console.log(paragrafo)
+            document.getElementById("paragrafo").innerHTML = paragrafo
+        
+        }
+        function limpar () {
+            document.getElementById("descricao").value = ''
+            document.getElementById("preco").value = ''
+            document.getElementById("estoque").value = ''
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

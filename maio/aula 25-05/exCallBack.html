@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div>
+            <label id="label">Digite uma fruta</label>
+        </div>
+        <div class="input">
+            <input type="text" id="fruta" placeholder="Digite uma fruta">
+        </div>
+        <div class="button">
+            <button onclick="add(mostrarEmLista)">Mostrar em lista</button>
+            <button onclick="add(mostrarEmParagrafo)">Mostrar em parágrafo</button>
+        </div>
+        
+    
+    <div id="dados">
+
+    </div>
+
+    <script>
+        var frutas = []
+        function add(callback){
+            var aux = document.getElementById("fruta")
+            if (aux.value == ""){
+                alert ("Informe a fruta")
+                aux.focus()
+                return
+            }
+            frutas.push(aux.value)
+            aux.value = ""
+            aux.focus()
+            callback()
+        }
+
+        function mostrarEmLista() {
+            var linha = '<ol>'
+            for(let i = 0; i < frutas.length; i++) {
+                    linha += `<li>${frutas[i]}</li>`
+            }
+            linha += '</ol>'
+            document.getElementById("dados").innerHTML = linha;
+        }
+
+        function mostrarEmParagrafo(){
+            var paragrafo = '<p>'
+            for (let i = 0; i < frutas.length; i++) {
+                    paragrafo += `<p>${frutas[i]}</p>`
+            }
+                paragrafo += '</p>'
+                document.getElementById("dados").innerHTML = paragrafo;
+        }
+    </script>
+</body>
+</html>
+

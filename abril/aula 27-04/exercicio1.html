@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+</head>
+<body>
+    <input id="name" type="text" placeholder="Informe seu nome:">
+    <input id="ano" type="text" placeholder="Informe seu ano de nascimento:">
+    <input id="mes" type="text" placeholder="Informe seu mês de nascimento">
+    <input id="dia" type="text" placeholder="Informe o dia do seu nascimento">
+    <button onclick="show()">Calcule</button>
+    <hr>
+    <p id = "resultado"></p>
+
+<script>
+        function show(){
+            var data = new Date()
+            var anoAtual = data.getFullYear()
+            var mesAtual = data.getMonth() + 1
+            var diaAtual = data.getDate()
+            var diaNasimento = document.getElementById("dia").value
+            var mesNascimento = document.getElementById("mes").value
+            var anoNascimento = document.getElementById("ano").value
+            var idade = anoAtual - anoNascimento
+            var name = document.getElementById("name").innerHTML
+
+        
+                if (mesAtual < mesNascimento) {
+                    idade--
+                }
+                if (mesAtual == mesNascimento) {
+                    if (diaAtual < diaNasimento)
+                    idade--
+                }
+            document.getElementById("resultado").innerHTML = `${mesAtual}Sua idade é ${idade}`
+        }
+
+</script>
+</body>
+</html>

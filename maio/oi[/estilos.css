@@ -1,0 +1,126 @@
+/*
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    background-color: #333333;
+}
+
+.menucontainer {
+    background-color: #4682B4;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.containeradm {
+    margin-left: 1400px;
+}
+
+.menucontainer a{
+    color: black;
+    text-decoration: none;
+    margin-left: 10px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 10px;
+    
+}
+
+.menucontainer a:hover {
+    background-color: black;
+    color: white;
+}
+
+.button {
+    background-color: white;
+    border-radius: 10px;
+}
+
+iframe {
+    width: 100vw;
+    height: 85vh;
+    display: flex;
+}
+
+.rodape {
+    background-color: #333333;
+    height: 7vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*/
+* {
+    box-sizing: border-box;
+}
+body{
+    margin:0;
+    background-image: url("fundo.jpg");
+    background-size: cover;
+}
+.menucontainer {
+	padding: 30px;
+	background: rgb(0, 57, 100);
+}
+
+.menucontainer a {
+	text-decoration: none;
+	color: white;
+	margin-right: 80px;
+	font-size: 22px;
+    font-family:  'Koulen', cursive;
+   
+}
+
+iframe {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    border: none;
+}
+#navbar {
+	display: flex;
+	justify-content: center;
+}
+
+.dropdown {
+	display: inline-block;
+	position: relative;	
+}
+
+.dropdown:hover .dropdown-content{
+	display: block;
+	background-color:rgb(0, 57, 100);
+	
+}
+.dropdown-content {
+	display: none;
+	position: absolute;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+
+.icone {
+    
+    text-align: center;
+    padding: 10px; 
+    
+}
+.textorodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 12px;
+}
+
+
+

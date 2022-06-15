@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Ola pessoal</p>
+    <input type="text" id= "nome" placeholder="Informe o nome:">
+    <input type="text" id="sobrenome" placeholder="Informe o sobrenome:">
+    <button onclick="nomecompleto()">Clique aqui</button>
+    <input type="text" id="recebenomes" readonly>
+    <p id=resposta></p>
+    <script>
+        function nomecompleto(){
+            var nome = document.getElementById("nome").value
+            var sobrenome = document.getElementById("sobrenome").value
+            if (nome == ''){
+                alert ("Digite um nome")
+                document.getElementById("nome").focus()
+                return
+            }
+            if (sobrenome == ''){
+                alert ("Digite um sobrenome")
+                document.getElementById("sobrenome").focus()
+                return
+            }
+            document.getElementById("recebenomes").value = nome + " " + sobrenome
+        }
+    </script>
+</body>
+</html>

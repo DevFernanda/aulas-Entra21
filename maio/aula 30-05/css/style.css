@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration: none;
+    text-decoration-color: none;
+}
+
+.navIndex {
+    background-color: #F08080;
+    width: 100vw;
+    height: 80px;
+}
+
+a:visited{
+    text-decoration:none;
+    color:black
+    
+    }
+.linkIndex {
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    font-family: 'Josefin Slab', serif;
+    color: black;
+    font-weight: bolder;
+    font-size: 20px;
+    
+}
