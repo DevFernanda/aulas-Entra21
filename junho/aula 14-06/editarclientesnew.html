@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="editar">
+        <input type="text" id="idselecionado">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Informe o nome">
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" placeholder="Telefone">
+        <label for="cpf">CPF</label>
+        <input type="text" id="cpf" minlength="10" x-moz-errormessage="Insira 10 dígitos" placeholder="Digite o CPF">
+        <label for="email">E-mail</label>
+        <input type="e-mail" placeholder="Informe o e-mail" id="email">
+        <button onclick="editar()">Salvar</button>
+    </div>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const idselecionado = urlParams.get("idselecionado")
+    document.getElementById("idselecionado").value = idselecionado
+
+    function (consultadados){
+        consultadados = idselecionado
+        fetch(`http://localhost:3000/clientes/${consultadados}`)
+        .then(data => data.json())
+        .then(dados => {
+                document.getElementById("nome").value = dados.nome
+                document.getElementById("telefone").value = dados.telefone
+                document.getElementById("cpf").value = dados.cpf
+                document.getElementById("email").value = dados.email
+        })
+
+    }
+
+</script>
+</body>
+</html>

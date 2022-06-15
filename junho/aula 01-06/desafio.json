@@ -1,0 +1,50 @@
+{
+    "venda": [
+        {
+            "id": 1,
+            "data": "30/05/2022",
+            "cliente": {
+                "id": 1,
+                "nome": "jose",
+                "endereco": "Pomerode"
+            },
+            "itens": [
+                {
+                    "id": 10,
+                    "descricao": "Milho",
+                    "preco": 10,
+                    "quantidade": 20
+                },
+                {
+                    "id": 11,
+                    "descricao": "Banha",
+                    "preco": 15,
+                    "quantidade": 10
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "data": "01/06/2022",
+            "cliente": {
+                "id": 2,
+                "nome": "Maria",
+                "endereco": "Timbó"
+            },
+            "itens": [
+                {
+                    "id": 11,
+                    "descricao": "Pão",
+                    "preco": 2,
+                    "quantidade": 50
+                },
+                {
+                    "id": 21,
+                    "descricao": "Maionese",
+                    "preco": 10,
+                    "quantidade": 5
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+  "clientes": [
+    {
+      "nome": "Fernanda",
+      "email": "fernanda.mattiello@gmail.com",
+      "fone": "47997445125",
+      "id": 1
+    },
+    {
+      "nome": "Fernanda",
+      "email": "fernanda.mattiello@gmail.com",
+      "fone": "47997445125",
+      "id": 2
+    }
+  ]
+}

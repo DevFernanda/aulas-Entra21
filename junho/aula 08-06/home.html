@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Home</h1>
+    <label for="idcliente">Digite um código de cliente</label>
+    <input type="number" id="idcliente">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <hr>
+    <label id="resultado"></label>
+    
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" placeholder= "Informe o nome">
+    <label for="telefone">Telefone</label>
+    <input type="text" id="telefone" placeholder="Telefone">
+    <label for="cpf">CPF</label>
+    <input type="text" id="cpf" placeholder="CPF">
+    <label for="email">Email</label>
+    <input type="text" id="email" placeholder="Informe o e-mail">
+    <button onclick="alterar()">Alterar</button>
+ 
+    <button onclick="excluir()">Excluir</button>
+    
+    
+
+    <script>
+        function pesquisar (){
+            
+            var idpesquisa = document.getElementById("idcliente").value
+            fetch(`http://localhost:3000/clientes/${idpesquisa}`)
+            .then(data => data.json())
+            .then(result => {
+                document.getElementById("nome").value = result.nome
+                document.getElementById("telefone").value = result.telefone
+                document.getElementById("cpf").value = result.cpf
+                document.getElementById("email").value = result.email
+
+            })           
+        }
+        
+        function alterar(){
+            if (!validaDados()) {
+                return
+            }
+                var idpesquisa = document.getElementById("idcliente").value
+                const alteradoCliente = {
+                     "nome": "",
+                     "telefone": "",
+                     "cpf": "",
+                     "email": ""
+                 }
+                 alteradoCliente.nome = document.getElementById("nome").value
+                 alteradoCliente.telefone = document.getElementById("telefone").value
+                 alteradoCliente.cpf = document.getElementById("cpf").value
+                 alteradoCliente.email = document.getElementById("email").value
+                 
+                 const options = {
+                     method: 'PUT',
+                     headers: {'Content-Type': 'application/json'},
+                     body: JSON.stringify(alteradoCliente)
+                 }
+                 fetch(`http://localhost:3000/clientes/${idpesquisa}`, options)
+                 .then(data => data.json())
+                 .then(dados => console.log(dados))
+
+                 validaDados()
+            }
+            function validaDados(){
+
+
+                if (document.getElementById("nome").value == ''){
+                    alert ("Informe o nome")
+                    document.getElementById("nome").focus();
+                    return false
+                } return true
+            }
+        
+        function excluir(){
+            var idpesquisa = document.getElementById("idcliente").value
+            fetch(`http://localhost:3000/clientes/${idpesquisa}`, {method: 'DELETE'})
+                 .then(data => data.json())
+                 .then(dados => alert("Cliente excluído com sucesso"))
+        }
+    </script>
+</body>
+</html>

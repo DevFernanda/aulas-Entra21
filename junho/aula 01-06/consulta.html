@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="load()">Pesquisar</button>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Fone</th>
+            </tr>
+        </thead>
+        <tbody id="dados"></tbody>
+    </table>
+    <script>
+        function load(tabela){
+            fetch("http://localhost:3000/clientes")
+            .then(x => x.json())
+            .then(y => mostrarTabela(y))
+            
+        }
+        
+
+        function mostrarTabela(dados){
+            var linhas = " "
+            for (let i=0; i < dados.length; i++) {
+                linhas += `
+                <tr><td>${dados[i].id}</td>
+                 <td>${dados[i].nome}</td>
+                 <td>${dados[i].email}</td>
+                 <td>${dados[i].fone}</td>                
+                </tr>
+                 `
+             } document.getElementById("dados").innerHTML = linhas
+        }
+    </script>
+</body>
+</html>

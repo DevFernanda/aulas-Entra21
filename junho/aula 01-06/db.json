@@ -1,0 +1,42 @@
+{
+"clientes": [
+    {
+        "id": 1,
+        "nome": "José da Silva",
+        "email": "jose@gmail.com",
+        "fone": "123-45678"
+    },
+    {
+        "id": 2,
+        "nome": "Maria da Silva",
+        "email": "jose@gmail.com",
+        "fone": "456-7890"
+    },
+    {
+        "id": 3,
+        "nome": "Antonio da Silva",
+        "email": "antonio@gmail.com",
+        "fone": "4526-7890"
+    }
+],
+"produtos": [
+    {
+        "id": 1,
+        "descricao": "Arroz",
+        "preco": 2.00,
+        "qtdEstoque": 5
+    },
+    {
+        "id": 2,
+        "descricao": "Feijao",
+        "preco": 5.00,
+        "qtdEstoque": 2
+    },
+    {
+        "id": 3,
+        "descricao": "Cup Noodles",
+        "preco": 3.50,
+        "qtdEstoque": 6
+    }
+]
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: auto;
+            padding: 5px;
+        }
+
+        input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Informe o nome" />
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Informe o e-mail" />
+        <label for="fone">Fone</label>
+        <input type="text" id="fone" placeholder="Informe o telefone do cliente" />
+        <div>
+            <button onclick="salvar()">Salvar</button>
+            <button onclick="limpar()">Cancelar</button>
+        </div>
+    </div>
+    <script>
+        function salvar() {
+            const cliente = {
+                nome: "",
+                email: "",
+                fone: ""
+            }
+
+            cliente.nome = document.getElementById("nome").value
+            cliente.email = document.getElementById("email").value
+            cliente.fone = document.getElementById("fone").value
+
+            const options = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cliente)
+            }
+
+            fetch("http://localhost:3000/clientes", options)
+                .then(data => data.json())
+                .then(cli => console.log(cli))
+
+            limpar()
+        }
+        function limpar() {
+            document.getElementById("nome").value = ""
+            document.getElementById("email").value = ""
+            document.getElementById("fone").value = ""
+        }
+    </script>
+</body>
+
+</html>

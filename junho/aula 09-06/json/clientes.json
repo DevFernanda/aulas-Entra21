@@ -1,0 +1,80 @@
+{
+  "clientes": [
+    {
+      "nome": "Fernanda Mattiello Azeredo",
+      "telefone": "789456",
+      "cpf": "10384895980",
+      "email": "mattiello.fer@gmail.com",
+      "id": 1
+    },
+    {
+      "nome": "André Augusto",
+      "telefone": "47 9 99744 5125",
+      "cpf": "12345678901",
+      "email": "fernanda.mattiello@gmail.com",
+      "id": 2
+    },
+    {
+      "nome": "Ana Cristina Souza",
+      "telefone": "47 9 8235 1409",
+      "cpf": "12345678902",
+      "email": "anasouza@gmail.com",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "nome": "Carlos de Andrade",
+      "telefone": "47 9 9568 2356",
+      "cpf": 12345678903,
+      "email": "carlos.andrade@gmail.com"
+    },
+    {
+      "id": 5,
+      "nome": "Lucas Ander",
+      "telefone": "47 9 9114 5608",
+      "cpf": 12345678900,
+      "email": "lucasa@gmail.com"
+    },
+    {
+      "nome": "Joana Luiza",
+      "telefone": "1489450940",
+      "cpf": "10384895980",
+      "email": "joana@gmail.com",
+      "id": 6
+    },
+    {
+      "nome": "Maria Annita",
+      "telefone": "1489450940",
+      "cpf": "10384895980",
+      "email": "maria@maria.com",
+      "id": 7
+    },
+    {
+      "nome": "Fernanda",
+      "telefone": "174920",
+      "cpf": "103848",
+      "email": "asdasd",
+      "id": 8
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "descricao": "Celular Samsung A10",
+      "quantidadeEstoque": 3,
+      "preco": 1.5
+    },
+    {
+      "id": 1,
+      "descricao": "Teclado Gamer Corsair",
+      "quantidadeEstoque": 2,
+      "preco": 175
+    },
+    {
+      "id": 3,
+      "descricao": "Mouse Razer Abyssus",
+      "quantidadeEstoque": 6,
+      "preco": 297.5
+    }
+  ]
+}
