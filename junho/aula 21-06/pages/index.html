@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="../scripts/calculos.js"></script>
+    <style>
+        .dropdown-item {
+            cursor: pointer;
+        }
+        input {
+            border-radius   : 5px  ;
+        }
+        
+    </style>
+</head>
+
+<body>
+        <input type="number" id="n1" placeholder="Informe número">
+        <input type="number" id="n2" placeholder="Informe número">
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary  btn-sm">Calcular</button>
+            <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Dropdown    </span>
+            </button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" onclick="adicao()">Somar</a>
+              <a class="dropdown-item" onclick="subtrai()">Subtração</a>
+              <a class="dropdown-item" onclick="vezes()">Multiplicação</a>
+              <a class="dropdown-item" onclick="divide()">Divisão</a>
+            </div>
+        </div>       
+          <div id="result">
+               
+          </div>
+    <script>
+        function adicao() {
+            let n1 = parseInt(document.getElementById("n1").value)
+            let n2 = parseInt(document.getElementById("n2").value)
+            let retorno = soma(n1, n2)
+            document.getElementById("result").innerHTML = retorno
+        }
+        function subtrai() {
+            let n1 = parseInt(document.getElementById("n1").value)
+            let n2 = parseInt(document.getElementById("n2").value)
+            let retorno = subtrair(n1, n2)
+            document.getElementById("result").innerHTML = retorno
+        }
+        function vezes() {
+            let n1 = parseInt(document.getElementById("n1").value)
+            let n2 = parseInt(document.getElementById("n2").value)
+            let retorno = multiplicar(n1, n2)
+            document.getElementById("result").innerHTML = retorno
+        }
+        function divide() {
+            let n1 = parseInt(document.getElementById("n1").value)
+            let n2 = parseInt(document.getElementById("n2").value)
+            let retorno = dividir(n1, n2)
+            document.getElementById("result").innerHTML = retorno
+        }
+    </script>
+</body>
+
+</html>
