@@ -1,0 +1,11 @@
+create table genero (
+	id serial primary key,
+	descricao varchar
+);
+
+alter table genero
+
+insert into genero(descricao)
+values ('Dorama')
+
+select * from genero;

@@ -1,0 +1,9 @@
+create table tipos (
+	id serial primary key,
+	descricao varchar
+);
+
+insert into tipos(descricao)
+values ('Livros')
+
+select * from tipos;

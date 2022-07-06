@@ -1,0 +1,22 @@
+drop table interesses;
+
+create table interesses(
+	id serial primary key,
+	fk_id_cadastro int,
+	fk_id_tipo int,
+	fk_id_genero int
+);
+alter table interesses
+add constraint fk_genero foreign key (fk_id_genero) references genero(id);
+
+alter table interesses
+add constraint fk_cadastro foreign key (fk_id_cadastro) references cadastro(id)
+
+alter table interesses
+add constraint fk_tipo foreign key (fk_id_tipo) references tipos(id);
+
+
+insert into interesses (fk_id_cadastro, fk_id_tipo, fk_id_genero)
+values (1, 2, 8);
+
+select * from interesses;

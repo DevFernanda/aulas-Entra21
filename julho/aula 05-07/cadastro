@@ -1,0 +1,13 @@
+create table cadastro(
+	id serial primary key,
+	nome varchar,
+	email varchar, 
+	senha varchar,
+	dataNascimento varchar,
+	genero varchar 
+);
+
+insert into cadastro (nome, email, senha, dataNascimento, genero)
+values('Lucas', 'lucas@gmail.com', '1234', '25/03/1996', 'masculino');
+
+select * from cadastro;
