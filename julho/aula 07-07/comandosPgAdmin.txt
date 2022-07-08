@@ -1,0 +1,38 @@
+create database "nomedobanco" // para criar o banco de dados no pgAdmin
+
+create table "nomedatabela" (
+	id serial primary key,
+	outrosdados int ou varchar
+);
+
+insert into "nomedatabela" (outrosdados) values ('blabla')
+
+alter table "nomedatabela"
+add constraint "fk_dado"
+foreign key (coluna) references tabela(chaveprimaria);
+
+//rodar e exibir a tablea
+select * from "nomedatabela"
+
+where  // para consultar algum dado da tabela
+
+// para alterar registro
+
+update (nomedatabela) set 
+dadoquevcqueralterar = dadoprainserir
+where id = "4"
+
+// exemplo: 
+
+update carro set
+placa = 'ALU-4567',
+marca = 'Chevrolet'
+where id = 4;
+
+// usar dados de outras tabelas na tabela atual 
+select ca.placa, ca.marca, cli.nome
+from unir un, carro ca, cliente cli
+where un.id_cliente = cli.id and
+ca.id = un.id_carro 
+and ca.placa like '%3' // é possível adicionar mais filtros, e no lugar do like posso usar = tbm
+// mas precisa ser literalmente igual. 

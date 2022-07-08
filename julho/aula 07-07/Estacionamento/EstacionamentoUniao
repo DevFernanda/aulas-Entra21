@@ -1,0 +1,35 @@
+create table unir(
+	id_cliente int,
+	id_carro int
+);
+
+alter table unir 
+add constraint id_do_cliente 
+foreign key (id_cliente) references cliente(id);
+
+alter table unir 
+add constraint id_do_carro 
+foreign key (id_carro) references carro(id);
+
+insert into unir (id_cliente, id_carro)
+values (5, 5)
+
+select * from unir
+
+select un.id_cliente, un.id_carro,  ca.placa, ca.marca
+from unir un, carro ca
+where un.id_carro = ca.id
+and un.id_cliente = 1
+
+select ca.placa, ca.marca, cli.nome
+from unir un, carro ca, cliente cli
+where un.id_cliente = cli.id and
+ca.id = un.id_carro
+
+select ca.placa, ca.marca, cli.nome
+from unir un, carro ca, cliente cli
+where un.id_cliente = cli.id and
+ca.id = un.id_carro and ca.placa like '%3'
+
+
+

@@ -1,0 +1,19 @@
+drop table cadastro;
+drop table genero;
+drop table interesses;
+drop table livros;
+drop table tipos;
+
+
+create table usuario (
+	id serial primary key,
+	email varchar (50) unique,
+	senha varchar (200) 
+); 
+
+insert into usuario (
+email, senha)
+values ('fernanda@gmail.com', '164');
+
+select * from categoria
+where email = 'fernanda@gmail.com' and senha = '164'

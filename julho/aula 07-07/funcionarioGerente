@@ -1,0 +1,16 @@
+create table funcionario (
+	id serial primary key,
+	nome varchar (50),
+	fk_gerente int,
+	foreign key (fk_gerente) references funcionario(id)
+);
+
+insert into funcionario(nome) values ('Fernanda');
+insert into funcionario(nome,fk_gerente) values ('João', 1);
+insert into funcionario(nome,fk_gerente) values ('Zé', 1);
+
+select * from funcionario;
+
+select ff.nome as Funcionario, fg.nome as Gerente
+from funcionario ff, funcionario fg
+where ff.fk_gerente = fg.id

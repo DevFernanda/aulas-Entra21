@@ -1,0 +1,6 @@
+create table login(
+	nome varchar (50),
+	apelido_pk serial primary key,
+	senha varchar (200)
+);
+

@@ -1,0 +1,9 @@
+create table cliente(
+	id serial primary key,
+	nome varchar
+);
+insert into cliente (nome)
+values ('Lucas')
+
+select * from cliente;
+
