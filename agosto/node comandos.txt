@@ -1,0 +1,53 @@
+*Para instalar o nodemon - para atualizar alterações no servidor*
+https://www.npmjs.com/package/nodemon
+
+npm install nodemon 
+
+*para rodar o nodemon*
+
+npx nodemon index.js
+
+* para instalar o node express*
+
+https://expressjs.com/pt-br/starter/installing.html
+
+npm install express 
+
+*para instalar install pg - arquivo que faz comunicação banco de dados/ "drive" *
+npm install pg
+
+
+*para instalar o cors - que é política de segurança entre servidores; *
+npm install cors
+usar = app.use = require (cors())
+
+*instalar comandos conexão sql*
+npm install sql
+
+*instalar o postman* 
+https://www.postman.com/downloads/postman-agent/
+
+*instalar o bcrypt*
+npm install bcrypt
+usar const bcrypt = require('bcrypt')
+e no corpo do post  bcrypt.hash(req.body.senha, 10, (erro, hash) =>
+
+
+para gerar o token
+npm install jsonwebtoken
+
+
+para criar variavel ambiente:
+criar um arquivo com nome exatamente igual = nodemon.json
+e escrever: 
+{
+    "env": {
+        "PORT": 8080,
+        "DATABASE_URL": "postgres://postgres:123456@localhost:5432/postgres"
+    }			//	    banco de dados:senha
+}
+
+
+
+ 
+

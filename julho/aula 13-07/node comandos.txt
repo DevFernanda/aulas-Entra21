@@ -1,0 +1,32 @@
+*Para instalar o nodemon - para atualizar alterações no servidor*
+https://www.npmjs.com/package/nodemon
+
+npm install nodemon 
+
+*para rodar o nodemon*
+
+npx nodemon index.js
+
+* para instalar o node express*
+
+https://expressjs.com/pt-br/starter/installing.html
+
+npm install express 
+
+*para instalar install pg - arquivo que faz comunicação banco de dados/ "drive" *
+npm install pg
+
+
+*para instalar o cors - que é política de segurança entre servidores; *
+npm install cors
+
+*instalar comandos conexão sql*
+npm install sql
+
+*instalar o postman* 
+https://www.postman.com/downloads/postman-agent/
+
+*instalar o bcrypt*
+npm install bcrypt
+usar const bcrypt = require('bcrypt')
+e no corpo do post  bcrypt.hash(req.body.senha, 10, (erro, hash) => 

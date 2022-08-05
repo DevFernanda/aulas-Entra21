@@ -1,0 +1,8 @@
+Postamnn - testar apis e requisições
+
+collections
++ create new collection
+(ex. aulas)
+add folder
+add request
+
