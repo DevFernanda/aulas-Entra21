@@ -54,7 +54,7 @@ router.post('/login', (req, res) => {
                         nome: result.rows[0].nome,
                         email: result.rows[0].email,
                         perfil: result.rows[0].perfil
-                       }, 'segredo')
+                       }, process.env.JWT_KEY)
                     return res.send({
                         token: token
                     })
