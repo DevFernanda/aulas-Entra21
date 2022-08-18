@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login de usuários</title>
+    <script src="./jwtdecode.js"></script>
 </head>
 <body>
     <div>
@@ -12,6 +13,10 @@
         <label>Senha</label>
         <input type="password" placeholder="Informe a senha" id="senha">
         <button onclick="logar()">Login</button>
+        <button onclick="decodetoken()">decodificar</button>
+    </div>
+    <div id="msg">
+
     </div>
 
     <script>
@@ -20,7 +25,7 @@
                 email: document.getElementById('email').value,
                 senha: document.getElementById('senha').value
             }
-            console.log(user);
+            //console.log(user);
 
             fetch('http://localhost:8080/usuarios/login', {
                 method: 'POST',
@@ -29,7 +34,22 @@
             }) 
             .then(data => data.json())
             .then(result => localStorage.setItem('token', result.token))
+        
+            msgLogar()
         }
+
+        function decodetoken(){
+            var tokendecodificado = jwt_decode(localStorage.getItem('token'))
+            console.log(tokendecodificado);
+            msgLogar()
+       
+        }
+
+        function msgLogar(){
+            var resp = jwt_decode(localStorage.getItem('token'))
+            document.getElementById("msg").innerHTML = `Bem vindo ${JSON.stringify(resp.nome)}`
+        }
+
     </script>
 </body>
 </html>

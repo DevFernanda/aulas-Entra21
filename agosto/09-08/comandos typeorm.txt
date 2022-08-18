@@ -1,0 +1,104 @@
+Criar server com type orm - 09-08
+
+- npm init -y (vai criar o arquivo package.json)
+- npm install typescript
+
+
+criar pasta src e criar arquivo .ts
+
+compilar o arquivo para js manualmente: 
+- npx tsc .\src\app.ts  
+
+criar arquivo tsconfig.json e colar:
+{
+    "compilerOptions": {
+        "lib": ["es5", "es6", "dom"],
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "outDir": "./build"
+    }
+}
+
+criar arquivo nodemon.json e colar 
+{
+    "env": {
+        "PORT": 8080
+        
+    }
+}
+
+para criar a pasta build e inserir os arquivos em JS que o typescript compilar;
+
+- npm install express  @types/express
+
+
+terminal principal
+- npm install nodemon
+- npm install pg
+
+
+-npx nodemon .\app.js para teste de servidor se quiser
+
+criar um terminal para rodar o transpilador de ts para js
+-npx tsc -w (deixar o ts att em js);
+
+para baixar TypeORM
+- npm i typeorm postgres reflect-metadata ou - npm i typeorm --f postgres reflect-metadata
+
+No package.json em debug acrescentar "start": "nodemon ./build/app.js" 
+no terminal 
+- npm start (para que não seja nescessário iniciar o nodemon toda vez no terminal).
+Lembrar de sempre iniciar a transpilação do typescript com o npx tsc -w; 
+
+Não esquecer de criar os imports 
+import * as express from "express"
+import {Request, Response} from "express"
+const app = express ()
+app.use(express.json())
+const PORT = process.env.PORT
+app.listen(PORT, () => {console.log(`Executando em http://localhost:${PORT}`)})
+
+para criar entidades criar arquivo dentro pasta src e dentro de pasta entity, exemplo:
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm"
+
+@Entity("tb_user")
+export class User {
+    @PrimaryGeneratedColumn()
+    id: number
+
+    @Column()
+    nome: string
+
+    @Column()
+    email: string
+
+    @Column()
+    idade: number
+}
+
+para criar conexão banco de dados criar arquvio data source, exemplo: 
+import {DataSource} from "typeorm"
+import { User } from "./entity/User"
+
+
+const dataSource = new DataSource({
+    type: "postgres",
+    host: "localhost",
+    port: 5432,
+    username: "postgres",
+    password: "123456",
+    database: "postgres",
+    //entities: [".src/entity/*.ts"],
+    entities: [User],
+    logging: false, //sql gerados do banco
+    synchronize: true,
+})
+
+export default dataSource
+
+
+
+

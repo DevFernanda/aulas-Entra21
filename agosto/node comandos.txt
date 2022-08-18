@@ -19,6 +19,7 @@ npm install pg
 
 *para instalar o cors - que é política de segurança entre servidores; *
 npm install cors
+const cors = require ('cors')
 usar = app.use = require (cors())
 
 *instalar comandos conexão sql*
@@ -47,6 +48,17 @@ e escrever:
     }			//	    banco de dados:senha
 }
 
+
+para usar o decodificador
+https://github.com/auth0/jwt-decode/tree/v2.2.0/build
+entrar em jwt-decode.js
+copiar o arquivo todo e colar no vsCode. Importar pra página de login e criar a função que recebe 
+o resultado:
+
+function decodetoken(){
+            var tokendecodificado = jwt_decode(localStorage.getItem('token'))
+            console.log(tokendecodificado); 
+        }
 
 
  
