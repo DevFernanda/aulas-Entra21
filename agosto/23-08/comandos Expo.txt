@@ -1,0 +1,77 @@
+instalar expo
+npx create-expo-app newApp // newApp é o nome do projeto
+cd newApp
+npm run web 
+npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
+npm run web 
+
+
+PARA INSTALAR NAVEGAÇÃO ENTRE TELAS (STACK)
+
+npm install @react-navigation/native @react-navigation/native-stack
+
+npx expo install react-native-screens react-native-safe-area-context
+
+
+PARA INSTALAR NAVEGAÇÃO ENTRE TELAS USANDO BARRA LATERAL (DRAWER)
+
+npm install @react-navigation/drawer
+npm install @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+
+DEPENDENCIAS DA SCREEN PARA O EXPO
+npm install react-native-gesture-handler react-native-reanimated
+
+IMPORTAR DEPENDENCIAS
+import {createDrawerNavigator} from '@react-navigation/drawer';
+
+no arquivo raiz inserir - <NavigationContainer>
+
+Criar stack de navegação no app.js
+const Drawer = createDrawerNavigator();
+
+no babel.config.js incluir:
+plugins: ['react-native-reanimated/plugin']
+
+PARA INSTALAR NAVEGAÇÃO COM TAB NAVIGATOR
+
+Instalar navegação do react
+> npm install @react-navigation/native
+> npm install @react-navigation/bottom-tabs
+
+Instalar dependencias de screen para o expo
+> expo install react-native-screens react-native-safe-area-context
+
+Instalar dependencias do material
+> npm install @react-navigation/material-top-tabs react-native-tab-view
+> npx expo install react-native-pager-view
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+const Tab = createMaterialTopTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
+}
+
+PARA CRIAR API
+
+npm install json-server
+
+Executar json-server em modo watch
+> json-server --watch ./src/dados/db.json
+
+criar pasta dados
+arquivo db.json
+{
+	"contatos": [
+
+]
+}
+
