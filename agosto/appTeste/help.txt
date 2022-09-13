@@ -1,0 +1,22 @@
+--Expo
+
+npx create-expo-app NomeDoProjeto
+
+cd NomeDoProjeto
+
+npx expo install react-nl react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@00.17.0
+
+npm run web
+
+__________________________
+
+--Navigation
+
+npm install @react-navigation/native @react-navigation/native-stack
+
+npx expo install react-native-screens react-native-safe-area-context
+
+npm install @react-navigation/stack
+
+
+

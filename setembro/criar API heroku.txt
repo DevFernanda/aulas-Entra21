@@ -1,0 +1,53 @@
+para criar API 
+
+npm instal express 
+
+para rodar = node index.js 
+
+npm install nodemon
+criar arquivo nodemon.json
+{
+    "env":{
+        "PORT": 3000
+    } 
+}
+
+no principal (index.js) colocar 
+
+const express = require ('express')
+const app = express()
+const port = process.env.PORT
+
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
+app.listen(port, () => {
+    console.log(`executando em http://localhost:${port}`);
+})
+
+no terminal: 
+
+npm init 
+
+no arquivo package.json em debug
+"start": "nodemon index.js"
+
+npm start 
+
+no terminal 
+git init
+git remote -v 
+npx heroku login
+npx heroku git:remote -a fm-nodejs
+git status
+git add .
+git commit -m "Primeiro commit"
+git push heroku master
+
+
+cpiar o link gerado no terminal e colar no navegador
+
+no site do heroku, em resources, add Heroku Postgres e adc
+no pg admin, criar um servidor, copiar as informações do Heroku e colar
+
