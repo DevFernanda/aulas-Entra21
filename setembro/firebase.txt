@@ -1,0 +1,30 @@
+Para instalar o firebase
+
+npx expo install firebase@8.2.3
+
+mudar o rules (if) para true no firebase 
+
+Padrão:
+
+import firebase from 'firebase'
+import 'firebase/storage'
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyD3omruTWvQ4Korr5kHc1tOBM-jwkEdQTY",
+  
+    authDomain: "reactnative-8757b.firebaseapp.com",
+  
+    projectId: "reactnative-8757b",
+  
+    storageBucket: "reactnative-8757b.appspot.com",
+  
+    messagingSenderId: "829698835824",
+  
+    appId: "1:829698835824:web:8c2f269a52af5161da7bb5"
+  
+  };
+  
+  firebase.initializeApp(firebaseConfig)
+  const database = firebase.firestore()
+  export default database

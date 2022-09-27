@@ -12,6 +12,12 @@ npm install @react-navigation/native @react-navigation/native-stack
 
 npx expo install react-native-screens react-native-safe-area-context
 
+No arquivo raiz inserir -> <NavigationContainer>
+Criar Stack de navegação na raiz -> const Stack = createNativeStackNavigator();
+Injetar navigation nos componentes -> Cadastro({ navigation })
+
+Definir rota para onde deseja navegar -> onPress={() => navigation.navigate('consulta')}
+
 
 PARA INSTALAR NAVEGAÇÃO ENTRE TELAS USANDO BARRA LATERAL (DRAWER)
 
